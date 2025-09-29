@@ -1,0 +1,802 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+.navbar-brand img {
+  height: 40px;
+}
+.nav-link {
+  font-size: 1rem;
+  color: #616161 !important;
+  margin-right: 1.5rem;
+  transition: color 0.3s ease;
+  font-weight: lighter;
+}
+.nav-link:hover {
+  font-weight: 800 !important;
+}
+
+.nav-link.active {
+  font-weight: 800 !important;
+}
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: flex-center; /* push text to bottom */
+  height: 100%; /* full height of navbar */
+}
+.cart-icon {
+  font-size: 1.5rem;
+  color: #212529;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.cart-icon:hover {
+  color: #007bff;
+}
+.navbar-nav .nav-item .nav-link {
+  font-weight: 500;
+}
+
+.hero-section {
+  position: relative;
+  background-image: url("/images/hero-bg.png");
+  background-position: center;
+  background-size: cover;
+  min-height: 600px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 0;
+  overflow: hidden; /* Hide overflowing elements */
+}
+.hero-content {
+  z-index: 1;
+  padding-left: 10%; /* Adjust as needed */
+}
+.hero-content .welcome-text {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 1rem;
+}
+.hero-content h1 {
+  font-size: 5.5rem; /* Adjust for responsiveness */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.focus-text {
+  color: #2a7ad8;
+}
+.hero-title {
+  color: #224458 !important;
+}
+.hero-button {
+  background-color: #224458; /* Darker blue */
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.hero-button:hover {
+  background-color: #0b3c8f; /* Slightly darker on hover */
+  color: #fff;
+}
+
+/* Abstract Background Elements */
+.abstract-shape-1,
+.abstract-shape-2,
+.paper-plane {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.7; /* Adjust opacity as needed */
+}
+
+.abstract-shape-1 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: url("/images/home-bg.png") no-repeat center;
+  background-size: contain;
+}
+
+.paper-plane {
+  width: 549px; /* Adjust size */
+  height: 366px;
+  right: 10%;
+  top: 15%;
+  background: url("/images/aeroplane.png") no-repeat center center / contain;
+  animation: fly 10s infinite linear;
+}
+
+.partners-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.section-title-2 {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.partner-logo {
+  max-height: 40px; /* Controls the height of the logos */
+  width: auto; /* Maintains aspect ratio */
+  object-fit: contain;
+  transition: all 0.3s ease-in-out;
+}
+.partner-logo:hover {
+  filter: grayscale(0%); /* Brings color back on hover */
+  opacity: 1;
+  transform: scale(1.1); /* Slightly enlarges the logo on hover */
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 4rem; /* Controls the spacing between logos */
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(-20px, 10px) rotate(5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(20px, -10px) rotate(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .hero-content {
+    text-align: center;
+    padding-left: 0;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .paper-plane {
+    display: none; /* Hide on smaller screens if too distracting */
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+}
+
+.process-section {
+  min-height: 600px;
+  background-image: url("/images/section-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.process-card p {
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.process-card-dark p {
+  color: #ffff !important;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.process-section p {
+  color: #616161;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.process-card {
+  width: 230px;
+  margin: 10px;
+  background-color: white;
+  color: #000;
+  padding: 20px;
+  border-radius: 20px;
+  transform: rotate(-6deg);
+  border: 1px solid #b1b1b1;
+}
+
+.process-card-dark {
+  width: 230px;
+  margin: 10px;
+  background-color: #0a2a43;
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  transform: rotate(-6deg);
+  border: 1px solid #b1b1b1;
+}
+.card-inside {
+  transform: rotate(3deg);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%; /* Makes the wrapper a perfect circle */
+  margin-right: 5px;
+}
+
+.icon-wrapper img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.icon-wrapper i {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #00d1b2; /* Bright teal color */
+}
+
+.card-description {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.metter-most-section {
+  min-height: 70vh;
+}
+
+.content-section {
+  min-height: 390px;
+  background-color: #0a2a43;
+  color: #fff;
+  transform: rotate(-1.5deg);
+  border-radius: 30px;
+}
+
+.inside {
+  transform: rotate(2deg);
+}
+
+.stats-section {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-section h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stats-section p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.download-section {
+  min-height: 80vh;
+  background-color: #0a2a43;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Prevents horizontal scrollbar */
+}
+
+/* Left Column Text Styling */
+.download-text-content {
+  padding-right: 30px; /* Add some space between text and slider */
+}
+
+.download-section h3 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.download-section p a {
+  color: white;
+}
+
+.download-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.download-section .view-more-btn {
+  background-color: white;
+  color: #000;
+  height: 54px;
+  width: 154px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  margin-top: 1rem;
+}
+
+/* Slider Styling */
+.template-slider-wrapper {
+  position: relative;
+}
+
+.template-slider {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  /* The transition for the sliding animation */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  /* Each slide takes up 40% of the container width */
+  /* 100% / 2.5 slides = 40% per slide */
+  flex: 0 0 40%;
+  max-width: 40%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 450px; /* Fixed height for consistency */
+  object-fit: contain;
+}
+
+/* Navigation Buttons Styling */
+.slider-nav {
+  text-align: right;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
+.slider-nav button {
+  background-color: #fff;
+  border: none;
+  color: #0a2a43;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background-color 0.3s;
+}
+
+.slider-nav button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Style for disabled button */
+.slider-nav button:disabled {
+  background-color: #5d6a77;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pricing-section {
+  min-height: 100vh;
+}
+
+.my-8 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pricing-card {
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.pricing-card h4 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.pricing-card h3 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.pricing-card p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #565656;
+}
+
+.h-line {
+  height: 1px;
+  background-color: #565656;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing-card ul li {
+  display: flex;
+}
+
+.pricing-card button {
+  background-color: #0e446f;
+  height: 40px;
+  width: 143px;
+  border-radius: 40px;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.pricing-card.dark {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-35px);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.ribbon {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: absolute;
+  top: -5px;
+  right: -8px;
+}
+
+.ribbon span {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100px;
+  padding: 5px 0;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transform: rotate(45deg);
+  top: 4px;
+  right: -25px;
+  font-size: 14px;
+}
+
+.h-line-dark {
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.pricing-card.dark p {
+  color: #fff;
+}
+
+.pricing-card.dark button {
+  background-color: #fff;
+  height: 40px;
+  width: 143px;
+  border-radius: 40px;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.gap-8 {
+  gap: 65px;
+}
+
+.footer-section {
+  background-color: #0a2a43;
+  min-height: 50vh;
+  color: #fff;
+}
+
+.footer-section img {
+  width: 223px;
+  height: 117px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-footer {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.social-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.social-icons img {
+  height: 30px;
+  width: 30px;
+}
+
+.contact-us {
+  min-height: 70vh;
+  background-image: url("/images/home-bg-1.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto;
+  background-size: contain;
+}
+
+.contact-us h2 {
+  font-size: 55px;
+  font-weight: 700;
+}
+
+.contact-us button {
+  background-color: #0a2a43;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form {
+  min-height: 500px;
+}
+
+.upload-file {
+  height: 50px;
+  width: 50px;
+}
+
+.contact-form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.contact-form input::placeholder {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.custom-upload-label {
+  display: flex; /* Aligns icon and text */
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  width: 100%;
+  cursor: pointer; /* Makes it look clickable */
+}
+
+/* NEW: Style for the text to mimic a placeholder */
+#file-name-display {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000; /* A typical placeholder color */
+  /* Remove browser default text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+.input-control {
+  border-bottom: 2px solid black;
+}
+
+.contact-form button {
+  background-color: #0e446f;
+  color: #fff;
+  padding: 0.5rem 4.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form h2 {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.contact-form h5 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.contact-form h6 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.testimonials-section {
+  overflow: hidden; /* Ensures no weird overflow from the card */
+  min-height: 300px;
+}
+
+.testimonial-intro h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5f6c7b;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.testimonial-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2a45;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-intro p {
+  font-size: 1rem;
+  color: #5f6c7b;
+  line-height: 1.8;
+}
+
+.testimonial-slider {
+  position: relative;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 25px 25px 25px 0px; /* Smooth, rounded corners */
+  padding: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: relative;
+  margin: 0 1rem;
+  display: none; /* Initially hide all cards */
+}
+
+.testimonial-card.active {
+  display: block; /* Show only the active card */
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #5f6c7b;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  /* Placeholder background color */
+  background-color: #c9a7a9;
+}
+
+.author-info h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a2a45;
+  margin: 0;
+}
+
+.author-info span {
+  font-size: 0.9rem;
+  color: #5f6c7b;
+}
+
+/* Slider dots styling */
+.slider-dots {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-right: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #1abc9c;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Active dot style (the pill shape) */
+.dot.active {
+  background-color: #1a2a45;
+  width: 25px;
+  border-radius: 5px;
+}

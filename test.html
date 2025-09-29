@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Section Styling */
+        .download-section {
+            min-height: 80vh;
+            background-color: #0a2a43;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            overflow: hidden; /* Prevents horizontal scrollbar */
+        }
+        
+        /* Left Column Text Styling */
+        .download-text-content {
+            padding-right: 30px; /* Add some space between text and slider */
+        }
+
+        .download-section h3 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .download-section p a {
+             color: white;
+        }
+
+        .download-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .download-section .view-more-btn {
+            background-color: white;
+            color: #000;
+            height: 54px;
+            width: 154px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            margin-top: 1rem;
+        }
+
+        /* Slider Styling */
+        .template-slider-wrapper {
+            position: relative;
+        }
+        
+        .template-slider {
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            /* The transition for the sliding animation */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            /* Each slide takes up 40% of the container width */
+            /* 100% / 2.5 slides = 40% per slide */
+            flex: 0 0 40%;
+            max-width: 40%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 450px; /* Fixed height for consistency */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Navigation Buttons Styling */
+        .slider-nav {
+            text-align: right;
+            margin-top: 20px;
+            padding-right: 20px;
+        }
+
+        .slider-nav button {
+            background-color: #fff;
+            border: none;
+            color: #0a2a43;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 8px;
+            transition: background-color 0.3s;
+        }
+
+        .slider-nav button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Style for disabled button */
+        .slider-nav button:disabled {
+            background-color: #5d6a77;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="download-section py-5">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-4 offset-md-1 download-text-content">
+                    <h3>Download sample</h3>
+                    <p>
+                        <a href="#">quis nostrud exercitation</a><br>
+                        <a href="#">ullamco laboris nisi ut</a><br>
+                        <a href="#">quis nostrud exercitation</a><br>
+                        <a href="#">ullamco laboris nisi ut</a>
+                    </p>
+                    <button class="view-more-btn">View More</button>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="template-slider-wrapper">
+                        <div class="template-slider">
+                            <div class="slider-track">
+                                <div class="slide"><img src="https://i.imgur.com/rOHn6S2.png" alt="Template 1"></div>
+                                <div class="slide"><img src="https://i.imgur.com/QkM4j1b.png" alt="Template 2"></div>
+                                <div class="slide"><img src="https://i.imgur.com/3Zrs3q6.png" alt="Template 3"></div>
+                                </div>
+                        </div>
+                        <div class="slider-nav">
+                            <button id="prev-btn">&lt;</button>
+                            <button id="next-btn">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.slider-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('next-btn');
+            const prevButton = document.getElementById('prev-btn');
+
+            let currentIndex = 0;
+            // The number of full slides to shift at a time
+            const slidesToScroll = 1; 
+
+            // Calculate the maximum index we can slide to
+            // This stops the slider from creating empty space at the end
+            const maxIndex = slides.length - 3; // Shows last 2.5 slides
+
+            const updateSliderPosition = () => {
+                // Each slide is 40% wide, plus padding. Let's calculate the exact width.
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const offset = -currentIndex * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
+            };
+
+            const updateButtons = () => {
+                // Disable prev button if at the start
+                prevButton.disabled = currentIndex === 0;
+                // Disable next button if at the end
+                nextButton.disabled = currentIndex >= maxIndex + 0.5; // Adjusted for the half slide
+            };
+
+            // Event listener for the "Next" button
+            nextButton.addEventListener('click', () => {
+                currentIndex += slidesToScroll;
+                if (currentIndex > maxIndex + 0.5) {
+                    currentIndex = maxIndex + 0.5; // Go exactly to the end
+                }
+                updateSliderPosition();
+                updateButtons();
+            });
+
+            // Event listener for the "Previous" button
+            prevButton.addEventListener('click', () => {
+                currentIndex -= slidesToScroll;
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                updateSliderPosition();
+                updateButtons();
+            });
+
+            // Initial setup
+            updateButtons();
+        });
+    </script>
+</body>
+</html>

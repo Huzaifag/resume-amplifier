@@ -1,0 +1,32 @@
+.page-hero {
+  min-height: 600px;
+  position: relative; /* important for overlay positioning */
+  background-image: url('/images/about.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-inner {
+  position: absolute; /* overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(217, 217, 217, 0.6); /* transparent overlay */
+  z-index: 1;
+}
+.hero-content {
+  position: absolute;
+  bottom: 30px;         /* adjust spacing from bottom */
+  left: 45%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;           /* above overlay */
+  color: #094854;          /* text visible on background */
+}
+
+.hero-content h1{
+  font-size: 66px;
+  font-weight: 700;
+  display: inline-block;
+}
