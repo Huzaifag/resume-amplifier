@@ -47,7 +47,7 @@ body {
 .page-hero {
   min-height: 600px;
   position: relative; /* important for overlay positioning */
-  background-image: url("/images/service.jpg");
+  background-image: url("../images/service.jpg");
   background-size: cover;
   background-position: center;
 }
